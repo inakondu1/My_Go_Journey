@@ -37,3 +37,13 @@ Types:Understanding the difference between `string`, `int`, and `bool`.
 
 ---
 “Simplicity is the art of Go.”
+
+
+---
+
+### 📈 Current Progress
+- [x] Hello World
+- [x] Print Full Name (Strings & Variables)
+- [x] Integer Math (Calculating years to 50)
+- [ ] Flow Control (If/Else & Loops)
+- [ ] 
