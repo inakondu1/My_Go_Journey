@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func hex(s string) (int64, error) {
+	val, err := strconv.ParseInt(s, 16, 64)
+	if err != nil {
+		val, err = strconv.ParseInt(s, 2, 16)
+    if err != nil {
+	val, err = strconv.ParseInt(s, 10, 64)
+
+	}
+		fmt.Println("invalid")
+	}
+	return val, err
+}
+func main() {
+	fmt.Println(hex("1E"))
+	fmt.Println(hex("FF"))
+	fmt.Println(hex("101"))	
+	fmt.Println(hex("10"))
+
+
+}
