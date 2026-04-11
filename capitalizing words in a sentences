@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func time(s string) string {
+	val := strings.Fields(s)
+	for i := 0; i < len(val); i++ {
+		word := val[i]
+		if len(word) > 0 {
+
+			val[i] = strings. ToLower(word[:3]) + strings. ToUpper(word[3:4]) + strings.ToLower(word[4:])
+
+		}
+
+	}
+	return strings.Join(val, " ")
+}
+func main() {
+	//text := " inakondu  gradually becoming  great programer"
+	fmt.Println(time("inakondu  gradually becoming great programer"))
+}
