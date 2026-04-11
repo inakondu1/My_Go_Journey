@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func mon(s string) string {
+	val := strings.Fields(s)
+	for i := 3; i < len(val); i += 3 {
+		word := val[i]
+		if len(word) > 0 {
+			val[i] = strings.ToUpper(word)
+
+			//val[i] = strings.ToLower(word[:3]) + strings.ToUpper(word[3:4]) + strings.ToLower(word[4:])
+
+		}
+
+	}
+	return strings.Join(val, " ")
+}
+func main() {
+	//text := " inakondu  gradually becoming  great programer"
+	fmt.Println(("inakondu  gradually becoming great programer"))
+}
