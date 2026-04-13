@@ -6,17 +6,20 @@ import (
 )
 
 func solve(s string) string {
-	words := strings.Fields(s)
-	for i := 0; i < len(words); i++ {
-		if words[i] == "(up)" && i > 0 {
-			words[i-1] = strings.ToUpper(words[i-1])
-			words = append(words[:i], words[i+1:]...)
-			i--
-		}
-	}
-	return strings.Join(words, " ")
-}
+    words := strings.Fields(s)
+    for i := 0; i < len(words); i++ {
+        if strings.HasSuffix(words[i], "(up)") && i > 0 {
+            words[i] = strings.TrimSuffix(words[i], "(up)")
+            words[i-1] = strings.ToUpper(words[i-1])
 
+            if words[i] == "" {
+                words = append(words[:i], words[i+1:]...)
+                i--
+            }
+        }
+    }
+    return strings.Join(words, " ")
+}
 func main() {
-	fmt.Println(solve("this is loud (up)"))
+	fmt.Println(solve("inakondu is a better persone(up) than any of you"))
 }
